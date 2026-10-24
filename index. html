@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoneyTrack | Personal Finance Tracker</title>
+  <link rel="stylesheet" href="style5.css">
+  <script src="script5.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#dashboard"><span class="brand-icon">₦</span><span >MoneyTrack</span></a>
+    <nav class="navigation" aria-label="Main navigation">
+      <a href="#dashboard">▦ <span>Dashboard</span></a>
+    <a  href="#transactions">↔ <span>Transactions</span></a>
+        <a  href="#budget">◷ <span>Budget</span></a>
+      <a href="#categories">▥ <span>Categories</span></a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="dashboard" class="page-section">
+      <div class="welcome">
+        <div>
+          <p class="eyebrow">YOUR MONEY, AT A GLANCE</p>
+          <h1>Good day Temi!<span>👋</span></h1>
+          <p>Keep track of what comes in, what goes out, and what you have left.</p>
+        </div>
+      </div>
+
+      <div class="summary-grid">
+        <article class="summary-card">
+              <p><span>↗</span></p>
+          <p>Total Income</p>
+          <h2 id="total-income">₦0.00</h2>
+        </article>
+        <article class="summary-card">
+              <p><span>↘</span></p>
+          <p>Total Expenses</p>
+          <h2 id="total-expenses">₦0.00</h2>
+        </article>
+        <article class="summary-card">
+              <p><span>◎</span></p>
+          <p>Current Balance</p>
+          <h2 id="current-balance">₦0.00</h2>
+        </article>
+        <article class="summary-card">
+              <p><span>◈</span></p>
+          <p>Budget Remaining</p>
+          <h2 id="budget-remaining">₦50,000.00</h2>
+        </article>
+      </div>
+    </section>
+
+    <section id="transactions" class="page-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">RECORD YOUR MONEY</p>
+          <h2>Add a transaction</h2>
+        </div>
+      </div>
+
+      <form id="transaction-form" class="panel form-grid">
+        <div class="form-field">
+          <label for="transaction-type">Transaction type</label>
+          <select id="transaction-type" required>
+            <option value="expense">Expense</option>
+            <option value="income">Income</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="description">Description</label>
+          <input id="description" type="text" placeholder="e.g. Groceries or Salary" required>
+        </div>
+        <div class="form-field">
+          <label for="amount">Amount (₦)</label>
+          <input id="amount" type="number" min="0.01" step="0.01" placeholder="0.00" required>
+        </div>
+        <div class="form-field">
+          <label for="date">Date</label>
+          <input id="date" type="date" required>
+        </div>
+        <div class="form-field">
+          <label for="category">Category</label>
+          <select id="category" required>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Bills">Bills</option>
+            <option value="Education">Education</option>
+            <option value="Salary">Salary</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Health">Health</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <button class="button" type="submit">+ Add transaction</button>
+      </form>
+
+      <div class="section-heading history-heading">
+        <div>
+          <p class="eyebrow">YOUR RECORDS</p>
+          <h2>Transaction history</h2>
+        </div>
+        <button id="clear-transactions" class="button button-light" type="button">Clear all</button>
+      </div>
+      <div class="panel table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Category</th>
+              <th>Date</th>
+              <th>Type</th>
+              <th>Amount</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="transaction-list">
+            <tr><td class="empty-message" colspan="6">No transactions yet. Add one above to get started.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="budget" class="page-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PLAN AHEAD</p>
+          <h2>Monthly budget</h2>
+        </div>
+      </div>
+      <div class="panel budget-panel">
+        <label for="monthly-budget">Set your monthly spending budget (₦)</label>
+        <div class="budget-controls">
+          <input id="monthly-budget" type="number" min="0" step="100" value="50000">
+          <button id="save-budget" class="button" type="button">Save budget</button>
+        </div>
+        <div class="budget-details">
+          <span>Expenses: <strong id="budget-spent">₦0.00</strong></span>
+          <span>Budget: <strong id="budget-total">₦50,000.00</strong></span>
+        </div>
+        <div class="progress-track" aria-label="Budget used">
+          <div id="budget-progress" class="progress-bar"></div>
+        </div>
+            <div class="budget-progress">
+              <div class="progress-label"><span>Budget used</span><strong id="budgetPercent">0%</strong></div>
+        <p id="budget-message" class="budget-message">You are within your budget.</p>
+      </div>
+    </section>
+
+    <section id="categories" class="page-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">SEE THE PATTERN</p>
+          <h2> your Expenses </h2>
+        </div>
+      </div>
+      <div id="category-breakdown" class="category-grid">
+        <p class="panel empty-category">Your expense categories will appear here when you add expenses.</p>
+      </div>
+    </section>
+    
+    <section class="tip-card">
+            <div class="tip-star">✦</div>
+            <h2>Money tip</h2>
+            <p>Give every naira a purpose. Track your spending to understand where your money goes.</p>
+          </section>
+  </main>
+
+  <footer>
+    <p>MoneyTrack — a simple way to understand your money.
+    @copyright,temi!2026</p>
+  </footer>
+</body>
+</html>
