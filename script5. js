@@ -15,7 +15,6 @@ function formatMoney(amount) {
     minimumFractionDigits: 2
   }).format(amount);
 }
-
 function saveData() {
   localStorage.setItem("moneyTrackTransactions", JSON.stringify(transactions));
   localStorage.setItem("moneyTrackBudget", String(monthlyBudget));
