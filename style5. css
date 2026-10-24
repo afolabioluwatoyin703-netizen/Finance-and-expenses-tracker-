@@ -57,7 +57,6 @@ body {
 }
 .brand-icon { width: 39px; height: 39px; display: grid; place-items: center; border-radius: 12px; background: #d9fff0; color: #087d60; font-size: 23px; }
 
-
 .logo {
   color:  White;
   font-size: 1.35rem;
