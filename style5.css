@@ -15,21 +15,7 @@
   --green: #16845b;
   --red: #c63c4a;
 }
-:root {
-  --navy: #17243b;
-  --navy-light: #243654;
-  --blue: #3478f6;
-  --green: #0d9b72;
-  --red: #e85d68;
-  --text: #172944;
-  --muted: #7a879b;
-  --line: #e7edf5;
-  --surface: #ffffff;
-  --page: #f5f8fc;
-  --radius: 18px;
-  font-family: "DM Sans", Arial, sans-serif;
-  color: var(--text);
-}
+
 
 
 html {
