@@ -4,19 +4,17 @@
 
 :root {
   --navy: #172554;
-     --navy-light: #243654;
+  --navy-light: #243654;
   --blue: #3157d5;
   --blue-light: #eaf0ff;
   --background: #f5f7fc;
   --text: #202944;
   --muted: #69738b;
   --border: #e1e6f0;
-  --white: #ffffff;
+  --white: #fff;
   --green: #16845b;
   --red: #c63c4a;
 }
-
-
 
 html {
   scroll-behavior: smooth;
@@ -26,25 +24,34 @@ html {
 body {
   margin: 0;
   background: var(--background);
-  color: var(--text);
+ 
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
 }
 
 .site-header {
-  
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 16px ;
-  box-shadow: 0 3px 14px ;
-  background:  #202f4a;
+  padding: 16px;
+  background: #202f4a;
+  
 }
-.brand-icon { width: 39px; height: 39px; display: grid; place-items: center; border-radius: 12px; background: #d9fff0; color: #087d60; font-size: 23px; }
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 39px;
+  height: 39px;
+  border-radius: 12px;
+  background: #d9fff0;
+  color: #087d60;
+  font-size: 23px;
+}
 
 .logo {
-  color:  White;
+  color: var(--white);
   font-size: 1.35rem;
   font-weight: 800;
   text-decoration: none;
@@ -60,9 +67,9 @@ body {
 }
 
 .navigation a {
-  color: var(--muted);
   padding: 9px 12px;
   border-radius: 8px;
+  color: var(--muted);
   font-size: 0.95rem;
   font-weight: 700;
   text-decoration: none;
@@ -90,7 +97,7 @@ body {
 
 .eyebrow {
   margin: 0 0 7px;
-  color: var(--blue);
+  color: blue;
   font-size: 0.76rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -104,7 +111,7 @@ p {
 
 h1 {
   margin-bottom: 10px;
-  color: var(--navy);
+  color: navy;
   font-size: clamp(1.8rem, 4vw, 2.7rem);
   line-height: 1.15;
 }
@@ -115,8 +122,8 @@ h2 {
 }
 
 .welcome p:last-child {
-  color: var(--muted);
   margin-bottom: 0;
+  color: muted;
 }
 
 .summary-grid {
@@ -128,10 +135,10 @@ h2 {
 
 .summary-card,
 .panel {
-  background: var(--white);
-  border: 1px solid var(--border);
+  border: 1px solid;
   border-radius: 14px;
-  box-shadow: 0 5px 18px rgba(23, 37, 84, 0.04);
+  background: White;
+  
 }
 
 .summary-card {
@@ -167,7 +174,7 @@ h2 {
 
 .form-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat (2, 1fr);
   gap: 18px;
 }
 
@@ -189,7 +196,7 @@ select {
   padding: 12px;
   border: 1px solid #d4dbea;
   border-radius: 8px;
-  background: var(--white);
+  background: white;
   color: var(--text);
   font: inherit;
 }
@@ -202,9 +209,9 @@ select:focus {
 
 .button {
   align-self: end;
+  padding: 12px 18px;
   border: 0;
   border-radius: 8px;
-  padding: 12px 18px;
   background: var(--blue);
   color: var(--white);
   cursor: pointer;
@@ -232,8 +239,8 @@ select:focus {
 
 table {
   width: 100%;
-  border-collapse: collapse;
   min-width: 700px;
+  border-collapse: collapse;
   text-align: left;
 }
 
@@ -260,22 +267,25 @@ tbody tr:last-child td {
   text-align: center;
 }
 
-.income-text {
-  color: var(--green);
+.income-text,
+.expense-text {
   font-weight: 700;
+}
+
+.income-text {
+  color: green;
 }
 
 .expense-text {
-  color: var(--red);
-  font-weight: 700;
+  color: red;
 }
 
 .delete-button {
+  padding: 7px 10px;
   border: 0;
   border-radius: 6px;
-  padding: 7px 10px;
   background: #fff0f1;
-  color: var(--red);
+  color: red;
   cursor: pointer;
   font-weight: 700;
 }
@@ -320,7 +330,7 @@ tbody tr:last-child td {
   width: 0;
   height: 100%;
   border-radius: inherit;
-  background: var(--blue);
+  background: blue;
   transition: width 0.25s ease;
 }
 
@@ -330,21 +340,19 @@ tbody tr:last-child td {
   font-weight: 700;
 }
 
-.budget-message.warning {
-  color: var(--red);
 }
 
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat 2 (0, 1fr);
   gap: 14px;
 }
 
 .category-card {
   padding: 18px;
-  background: var(--white);
   border: 1px solid var(--border);
   border-radius: 12px;
+  background: white;
 }
 
 .category-card p {
@@ -353,7 +361,7 @@ tbody tr:last-child td {
 }
 
 .category-card strong {
-  color: var(--navy);
+  color: navy;
   font-size: 1.2rem;
 }
 
@@ -366,15 +374,14 @@ tbody tr:last-child td {
 footer {
   margin-top: 45px;
   padding: 25px 5%;
-  background: var(--white);
   border-top: 1px solid var(--border);
+  background:var(--white) ;
   color: var(--muted);
   text-align: center;
+  
 }
 
-footer p {
-  margin: 0;
-}
+
 
 @media (min-width: 850px) {
   .summary-grid {
